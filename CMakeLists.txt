@@ -21,6 +21,8 @@ else()
 	find_package(CUDA)
 	message("-- CUDA version: ${CUDA_VERSION}")
 
+ 	find_cuda_helper_libs(nppi)
+
 	set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}; -O3)
 
 	if(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
